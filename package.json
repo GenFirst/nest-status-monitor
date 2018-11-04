@@ -1,0 +1,60 @@
+{
+  "name": "nest-status-monitor",
+  "version": "0.0.1",
+  "description": "Realtime Monitoring for Express-based Node applications",
+  "main": "dist/index.js",
+  "repository": "git@github.com:GenFirst/nest-status-monitor.git",
+  "author": "ivanvs <robince885@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "nestjs",
+    "status",
+    "monitoring",
+    "node"
+  ],
+  "devDependencies": {
+    "@nestjs/common": "^5.2.2",
+    "@nestjs/core": "^5.2.2",
+    "@nestjs/testing": "^5.2.2",
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.12.1",
+    "coveralls": "^3.0.2",
+    "jest": "^23.5.0",
+    "nestjs-config": "^1.2.2",
+    "prettier": "^1.14.3",
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "debug": "^2.6.8",
+    "handlebars": "~4.0.12",
+    "on-headers": "^1.0.1",
+    "pidusage": "^1.1.6",
+    "request-promise-native": "^1.0.5",
+    "socket.io": "^2.0.3",
+    "reflect-metadata": "^0.1.12"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "coveralls": "yarn run coverage --coverageReporters=text-lcov | coveralls",
+    "test:watch": "jest --watch",
+    "build": "rm -rf ./dist && tsc",
+    "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write && git status",
+    "prepublish": "npm run format && npm run build"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage"
+  }
+}
