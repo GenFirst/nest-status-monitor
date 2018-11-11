@@ -27,21 +27,22 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
+    "@nestjs/websockets": "^5.4.0",
     "debug": "^2.6.8",
     "handlebars": "~4.0.12",
     "on-headers": "^1.0.1",
     "pidusage": "^1.1.6",
+    "reflect-metadata": "^0.1.12",
     "request-promise-native": "^1.0.5",
-    "socket.io": "^2.0.3",
-    "reflect-metadata": "^0.1.12"
+    "socket.io": "^2.0.3"
   },
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "coveralls": "yarn run coverage --coverageReporters=text-lcov | coveralls",
+    "coveralls": "npm run coverage --coverageReporters=text-lcov | coveralls",
     "test:watch": "jest --watch",
     "build": "rm -rf ./dist && tsc",
-    "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write && git status",
+    "format": "prettier src/**/*.ts --ignore-path ./.prettierignore --write && git status",
     "prepublish": "npm run format && npm run build"
   },
   "jest": {

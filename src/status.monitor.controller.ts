@@ -7,23 +7,32 @@ const controllerPath = 'monitor';
 
 @Controller(controllerPath)
 export class StatusMonitorController {
-  @Get()
-  @HttpCode(200)
-  root() {
-    const data = {
+  data;
+  render;
+
+  constructor() {
+    this.data = {
+      title: 'Nest.js Status',
+      port: 3001,
+      bodyClasses: '',
       script: fs.readFileSync(
-        path.join(__dirname, '/public/javascripts/app.js'),
+        path.join(__dirname, '../src/public/javascripts/app.js'),
       ),
       style: fs.readFileSync(
-        path.join(__dirname, '/public/stylesheets/style.css'),
+        path.join(__dirname, '../src/public/stylesheets/style.css'),
       ),
     };
 
     const htmlTmpl = fs
-      .readFileSync(path.join(__dirname, '/public/index.html'))
+      .readFileSync(path.join(__dirname, '../src/public/index.html'))
       .toString();
 
-    const render = Handlebars.compile(htmlTmpl);
-    return render(data);
+    this.render = Handlebars.compile(htmlTmpl, { strict: true });
+  }
+
+  @Get()
+  @HttpCode(200)
+  root() {
+    return this.render(this.data);
   }
 }
