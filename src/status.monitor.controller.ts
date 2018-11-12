@@ -2,6 +2,7 @@ import { Get, Controller, HttpCode } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
 import Handlebars from 'handlebars';
+import { HealtCheckService } from './healt.check.service';
 
 const controllerPath = 'monitor';
 
@@ -10,7 +11,7 @@ export class StatusMonitorController {
   data;
   render;
 
-  constructor() {
+  constructor(private readonly healtCheckService: HealtCheckService) {
     this.data = {
       title: 'Nest.js Status',
       port: 3001,
@@ -32,7 +33,9 @@ export class StatusMonitorController {
 
   @Get()
   @HttpCode(200)
-  root() {
+  async root() {
+    const healtData = await this.healtCheckService.checkAllEndpoints();
+    this.data.healthCheckResults = healtData;
     return this.render(this.data);
   }
 }

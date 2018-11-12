@@ -94,7 +94,6 @@ export class StatusMonitoringService {
     const responseTime = (diff[0] * 1e3 + diff[1]) * 1e-6;
     const category = Math.floor(statusCode / 100);
 
-    console.log(responseTime);
     this.spans.forEach(span => {
       const last = span.responses[span.responses.length - 1];
 
