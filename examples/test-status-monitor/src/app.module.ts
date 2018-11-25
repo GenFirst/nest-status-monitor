@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { StatusMonitorModule } from '../../../dist/status.monitor.module';
-import { StatusMonitorConfiguration } from '../../../dist/config/status.monitor.configuration';
+import {
+  StatusMonitorModule,
+  StatusMonitorConfiguration,
+} from '../../../dist/index';
 import { HealtController } from './healtController';
 
 const statusMonitorConfig: StatusMonitorConfiguration = {
