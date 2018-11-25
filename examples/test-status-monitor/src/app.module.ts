@@ -8,9 +8,8 @@ import { HealtController } from './healtController';
 const statusMonitorConfig: StatusMonitorConfiguration = {
   pageTitle: 'Nest.js Monitoring Page',
   port: 3001,
-  path: 'status',
-  theme: 'default.css',
-  ignoreStartsWith: '',
+  path: '/status',
+  ignoreStartsWith: '/healt/alive',
   healthChecks: [
     {
       protocol: 'http',

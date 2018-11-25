@@ -14,8 +14,7 @@ export class StatusMonitorController {
 
   constructor(
     private readonly healtCheckService: HealthCheckService,
-    @Inject(STATUS_MONITOR_OPTIONS_PROVIDER)
-    private readonly config: StatusMonitorConfiguration,
+    @Inject(STATUS_MONITOR_OPTIONS_PROVIDER) config: StatusMonitorConfiguration,
   ) {
     const bodyClasses = Object.keys(config.chartVisibility)
       .reduce((accumulator, key) => {
