@@ -2,38 +2,28 @@ import { Injectable, Inject, forwardRef } from '@nestjs/common';
 import * as pidusage from 'pidusage';
 import * as os from 'os';
 import { StatusMonitorGateway } from './status.monitor.gateway';
+import { STATUS_MONITOR_OPTIONS_PROVIDER } from './status.monitor.constants';
+import { StatusMonitorConfiguration } from './config/status.monitor.configuration';
 
 @Injectable()
 export class StatusMonitoringService {
-  spans = [
-    {
-      interval: 1,
-      retention: 60,
-      os: [],
-      responses: [],
-    },
-    {
-      interval: 5,
-      retention: 60,
-      os: [],
-      responses: [],
-    },
-    {
-      interval: 15,
-      retention: 60,
-      os: [],
-      responses: [],
-    },
-  ];
+  spans = [];
 
   constructor(
     @Inject(forwardRef(() => StatusMonitorGateway))
     private readonly statusMonitorWs: StatusMonitorGateway,
+    @Inject(STATUS_MONITOR_OPTIONS_PROVIDER)
+    readonly config: StatusMonitorConfiguration,
   ) {
-    this.spans.forEach(currentSpan => {
-      const span = currentSpan;
-      span.os = [];
-      span.responses = [];
+    config.spans.forEach(currentSpan => {
+      const span = {
+        os: [],
+        responses: [],
+        interval: currentSpan.interval,
+        retention: currentSpan.retention,
+      };
+
+      this.spans.push(span);
 
       const interval = setInterval(() => {
         this.collectOsMetrics(span);

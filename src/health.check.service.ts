@@ -1,8 +1,8 @@
-import { Injectable, Inject, forwardRef } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 
 @Injectable()
-export class HealtCheckService {
+export class HealthCheckService {
   healthChecks = [
     {
       protocol: 'http',

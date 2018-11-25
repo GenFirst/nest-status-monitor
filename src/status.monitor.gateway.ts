@@ -2,7 +2,6 @@ import {
   SubscribeMessage,
   WebSocketGateway,
   WebSocketServer,
-  WsResponse,
   OnGatewayConnection,
 } from '@nestjs/websockets';
 import { StatusMonitoringService } from './status.monitoring.service';
