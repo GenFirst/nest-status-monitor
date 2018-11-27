@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Realtime Monitoring for Express-based Node applications",
   "main": "dist/index.js",
-  "repository": "git@github.com:GenFirst/nest-status-monitor.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/GenFirst/nest-status-monitor.git"
+  },
   "author": "ivanvs <robince885@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -58,5 +61,12 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "coverageDirectory": "./coverage"
+  },
+  "bugs": {
+    "url": "https://github.com/GenFirst/nest-status-monitor/issues"
+  },
+  "homepage": "https://github.com/GenFirst/nest-status-monitor#readme",
+  "directories": {
+    "example": "examples"
   }
 }
