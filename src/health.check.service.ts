@@ -1,22 +1,18 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import axios from 'axios';
+import { STATUS_MONITOR_OPTIONS_PROVIDER } from './status.monitor.constants';
+import { StatusMonitorConfiguration } from './config/status.monitor.configuration';
+import { HealthCheckConfiguration } from './config/health.check.configuration';
 
 @Injectable()
 export class HealthCheckService {
-  healthChecks = [
-    {
-      protocol: 'http',
-      host: 'localhost',
-      path: '/healt/alive',
-      port: '3001',
-    },
-    {
-      protocol: 'http',
-      host: 'localhost',
-      path: '/healt/dead',
-      port: '3001',
-    },
-  ];
+  healthChecks: HealthCheckConfiguration[] = [];
+
+  constructor(
+    @Inject(STATUS_MONITOR_OPTIONS_PROVIDER) config: StatusMonitorConfiguration,
+  ) {
+    this.healthChecks = config.healthChecks;
+  }
 
   checkAllEndpoints() {
     const checkPromises = [];
