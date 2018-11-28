@@ -1,7 +1,7 @@
 import { Get, Controller, HttpCode } from '@nestjs/common';
 
-@Controller('healt')
-export class HealtController {
+@Controller('health')
+export class HealthController {
   @Get('alive')
   @HttpCode(200)
   alive(): string {

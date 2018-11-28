@@ -5,7 +5,7 @@ import {
   StatusMonitorModule,
   StatusMonitorConfiguration,
 } from '../../../dist/index';
-import { HealtController } from './healtController';
+import { HealthController } from './healthController';
 
 const statusMonitorConfig: StatusMonitorConfiguration = {
   pageTitle: 'Nest.js Monitoring Page',
@@ -16,13 +16,13 @@ const statusMonitorConfig: StatusMonitorConfiguration = {
     {
       protocol: 'http',
       host: 'localhost',
-      path: '/healt/alive',
+      path: '/health/alive',
       port: 3001,
     },
     {
       protocol: 'http',
       host: 'localhost',
-      path: '/healt/dead',
+      path: '/health/dead',
       port: 3001,
     },
   ],
@@ -56,7 +56,7 @@ const statusMonitorConfig: StatusMonitorConfiguration = {
 
 @Module({
   imports: [StatusMonitorModule.setUp(statusMonitorConfig)],
-  controllers: [AppController, HealtController],
+  controllers: [AppController, HealthController],
   providers: [AppService],
 })
 export class AppModule {}
