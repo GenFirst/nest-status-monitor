@@ -36,28 +36,33 @@ module.
 Default config:
 
 ```javascript
-title: 'Nest.js Status Monitor',  // Default title
+pageTitle: 'Nest.js Monitoring Page',
+port: 3001,
 path: '/status',
-spans: [{
-  interval: 1,            // Every second
-  retention: 60           // Keep 60 datapoints in memory
-}, {
-  interval: 5,            // Every 5 seconds
-  retention: 60
-}, {
-  interval: 15,           // Every 15 seconds
-  retention: 60
-}],
+ignoreStartsWith: '/healt/alive',
+spans: [
+  {
+    interval: 1, // Every second
+    retention: 60, // Keep 60 datapoints in memory
+  },
+  {
+    interval: 5, // Every 5 seconds
+    retention: 60,
+  },
+  {
+    interval: 15, // Every 15 seconds
+    retention: 60,
+  }
+],
 chartVisibility: {
   cpu: true,
   mem: true,
   load: true,
   responseTime: true,
   rps: true,
-  statusCodes: true
+  statusCodes: true,
 },
-healthChecks: [],
-ignoreStartsWith: '/admin'
+healthChecks: []
 ```
 
 ## Health Checks
@@ -68,17 +73,20 @@ endpoint returns a 200 status code.
 
 ```javascript
 // config
-healthChecks: [{
-  protocol: 'http',
-  host: 'localhost'
-  path: '/healt/alive',
-  port: '3001'
-}, {
-  protocol: 'http',
-  host: 'localhost'
-  path: '/healt/dead',
-  port: '3001'
-}]
+healthChecks: [
+  {
+    protocol: 'http',
+    host: 'localhost',
+    path: '/health/alive',
+    port: 3001,
+  },
+  {
+    protocol: 'http',
+    host: 'localhost',
+    path: '/health/dead',
+    port: 3001,
+  },
+];
 ```
 
 ## License
