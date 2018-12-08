@@ -9,6 +9,10 @@
 Simple, self-hosted module based on Socket.io and Chart.js to report realtime
 server metrics for Nest.js based node servers.
 
+## Demo
+
+Demo can be found [here](https://nest-status-monitor.herokuapp.com/status)
+
 ## Installation & setup
 
 1. Run `npm install nest-status-monitor --save`
