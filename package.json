@@ -55,12 +55,13 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": "tests",
     "testRegex": ".spec.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageDirectory": "./coverage"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node"
   },
   "bugs": {
     "url": "https://github.com/GenFirst/nest-status-monitor/issues"
