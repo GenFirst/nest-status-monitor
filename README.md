@@ -4,6 +4,8 @@
 
 [![nest-status-monitor on npm](https://img.shields.io/npm/v/nest-status-monitor.svg)](https://www.npmjs.com/package/nest-status-monitor)
 [![npm](https://img.shields.io/npm/dt/nest-status-monitor.svg)](https://img.shields.io/npm/dt/nest-status-monitor.svg)
+[![Build Status](https://travis-ci.org/GenFirst/nest-status-monitor.svg?branch=master)](https://travis-ci.org/GenFirst/nest-status-monitor)
+[![Coverage Status](https://coveralls.io/repos/github/GenFirst/nest-status-monitor/badge.svg?branch=master)](https://coveralls.io/github/GenFirst/nest-status-monitor?branch=master)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Simple, self-hosted module based on Socket.io and Chart.js to report realtime
