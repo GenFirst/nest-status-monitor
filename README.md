@@ -1,5 +1,6 @@
 # nest-status-monitor
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a9a9dd2176a24945b0a43b33d1674227)](https://app.codacy.com/app/robince885/nest-status-monitor?utm_source=github.com&utm_medium=referral&utm_content=GenFirst/nest-status-monitor&utm_campaign=Badge_Grade_Dashboard)
 [![NPM](https://nodei.co/npm/nest-status-monitor.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/nest-status-monitor/)
 
 [![nest-status-monitor on npm](https://img.shields.io/npm/v/nest-status-monitor.svg)](https://www.npmjs.com/package/nest-status-monitor)
