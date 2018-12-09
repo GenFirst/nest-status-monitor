@@ -9,7 +9,7 @@
 Simple, self-hosted module based on Socket.io and Chart.js to report realtime
 server metrics for Nest.js based node servers.
 
-<img src="https://imgur.com/a/CSo2z8r" alt="Status monitor page">
+![Status monitor page](https://i.imgur.com/AkZEPYG.gif 'Status monitor page')
 
 ## Demo
 
