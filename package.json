@@ -16,9 +16,9 @@
     "node"
   ],
   "devDependencies": {
-    "@nestjs/common": "^5.2.2",
-    "@nestjs/core": "^5.2.2",
-    "@nestjs/testing": "^5.2.2",
+    "@nestjs/common": "^5.4.0",
+    "@nestjs/core": "^5.4.0",
+    "@nestjs/testing": "^5.4.0",
     "@types/jest": "^23.3.1",
     "@types/node": "^10.12.1",
     "coveralls": "^3.0.2",
