@@ -7,6 +7,7 @@
 [![Build Status](https://travis-ci.org/GenFirst/nest-status-monitor.svg?branch=master)](https://travis-ci.org/GenFirst/nest-status-monitor)
 [![Coverage Status](https://coveralls.io/repos/github/GenFirst/nest-status-monitor/badge.svg?branch=master)](https://coveralls.io/github/GenFirst/nest-status-monitor?branch=master)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Edit nest-status-monitor](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/yw1lov19q9?autoresize=1&initialpath=%2Fstatus)
 
 Simple, self-hosted module based on Socket.io and Chart.js to report realtime
 server metrics for Nest.js based node servers.
