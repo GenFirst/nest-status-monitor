@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Realtime Monitoring for Express-based Node applications",
   "main": "dist/index.js",
+  "types": "dist/index",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/GenFirst/nest-status-monitor.git"
