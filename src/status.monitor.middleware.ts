@@ -1,7 +1,6 @@
 import {
   Injectable,
   NestMiddleware,
-  MiddlewareFunction,
   Inject,
 } from '@nestjs/common';
 import * as onHeaders from 'on-headers';
@@ -17,23 +16,21 @@ export class StatusMonitorMiddleware implements NestMiddleware {
     private readonly config: StatusMonitorConfiguration,
   ) {}
 
-  resolve(...args: any[]): MiddlewareFunction {
-    return (req, res, next) => {
-      if (
-        this.config.ignoreStartsWith &&
-        !req.originalUrl.startsWith(this.config.ignoreStartsWith) &&
-        !req.originalUrl.startsWith(this.config.path)
-      ) {
-        const startTime = process.hrtime();
-        onHeaders(res, () => {
-          this.statusMonitoringService.collectResponseTime(
-            res.statusCode,
-            startTime,
-          );
-        });
-      }
+    use(req, res, next: Function) {
+        if (
+            this.config.ignoreStartsWith &&
+            !req.originalUrl.startsWith(this.config.ignoreStartsWith) &&
+            !req.originalUrl.startsWith(this.config.path)
+        ) {
+            const startTime = process.hrtime();
+            onHeaders(res, () => {
+                this.statusMonitoringService.collectResponseTime(
+                    res.statusCode,
+                    startTime,
+                );
+            });
+        }
 
-      next();
-    };
-  }
+        next();
+    }
 }

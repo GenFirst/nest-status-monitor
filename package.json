@@ -16,9 +16,9 @@
     "node"
   ],
   "devDependencies": {
-    "@nestjs/common": "^5.4.0",
-    "@nestjs/core": "^5.4.0",
-    "@nestjs/testing": "^5.4.0",
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/testing": "^6.0.0",
     "@types/jest": "^23.3.1",
     "@types/node": "^10.12.1",
     "coveralls": "^3.0.2",
@@ -30,7 +30,7 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "@nestjs/websockets": "^5.4.0",
+    "@nestjs/websockets": "^6.0.0",
     "axios": "^0.18.0",
     "debug": "^2.6.8",
     "handlebars": "~4.0.12",
