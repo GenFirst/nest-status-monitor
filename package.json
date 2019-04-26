@@ -1,6 +1,6 @@
 {
   "name": "nest-status-monitor",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Realtime Monitoring for Express-based Node applications",
   "main": "dist/index.js",
   "repository": {
