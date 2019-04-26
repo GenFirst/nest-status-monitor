@@ -18,9 +18,21 @@ server metrics for Nest.js based node servers.
 
 Demo can be found [here](https://nest-status-monitor.herokuapp.com/status)
 
-## Installation & setup
+## Installation & setup Nest.js v6
 
 1. Run `npm install nest-status-monitor --save`
+2. Setup module:
+
+```javascript
+@Module({
+  imports: [StatusMonitorModule.setUp(statusMonitorConfig)],
+```
+
+3. Run server and go to `/status`
+
+## Installation & setup Nest.js v5
+
+1. Run `npm install nest-status-monitor@0.0.3 --save`
 2. Setup module:
 
 ```javascript
