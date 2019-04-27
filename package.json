@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Realtime Monitoring for Express-based Node applications",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/GenFirst/nest-status-monitor.git"
@@ -45,7 +46,7 @@
     "coverage": "jest --coverage",
     "coveralls": "npm run coverage --coverageReporters=text-lcov | coveralls",
     "test:watch": "jest --watch",
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./dist && tsc --declaration",
     "format": "prettier src/**/*.ts --ignore-path ./.prettierignore --write && git status",
     "prepublish": "npm run format && npm run build"
   },
