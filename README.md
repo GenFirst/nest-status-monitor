@@ -60,7 +60,7 @@ Default config:
 pageTitle: 'Nest.js Monitoring Page',
 port: 3001,
 path: '/status',
-ignoreStartsWith: '/healt/alive',
+ignoreStartsWith: '/health/alive',
 spans: [
   {
     interval: 1, // Every second
