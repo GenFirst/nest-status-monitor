@@ -1,6 +1,6 @@
 {
   "name": "nest-status-monitor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Realtime Monitoring for Express-based Node applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,7 +34,7 @@
     "@nestjs/websockets": "^6.0.0",
     "axios": "^0.18.0",
     "debug": "^2.6.8",
-    "handlebars": "~4.0.12",
+    "handlebars": "4.5.1",
     "on-headers": "^1.0.1",
     "pidusage": "^1.1.6",
     "reflect-metadata": "^0.1.12",

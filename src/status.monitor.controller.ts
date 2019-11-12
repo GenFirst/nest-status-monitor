@@ -1,11 +1,11 @@
 import { Get, Controller, HttpCode, Inject } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
-import Handlebars from 'handlebars';
 import { HealthCheckService } from './health.check.service';
 import { PATH_METADATA } from '@nestjs/common/constants';
 import { STATUS_MONITOR_OPTIONS_PROVIDER } from './status.monitor.constants';
 import { StatusMonitorConfiguration } from './config/status.monitor.configuration';
+const Handlebars = require('handlebars');
 
 @Controller()
 export class StatusMonitorController {
