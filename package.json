@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@nestjs/websockets": "^6.11.11",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "debug": "^2.6.8",
     "handlebars": "4.7.3",
     "on-headers": "^1.0.2",
